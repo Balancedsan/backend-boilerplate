@@ -1,0 +1,21 @@
+version: '3.7'
+
+services:
+  dev:
+    container_name: trello-clone-dev
+    image: postgres
+    environment:
+        POSTGRES_PASSWORD: test
+        POSTGRES_USER: postgres
+        POSTGRES_DB: trello-clone-dev
+    ports:
+      - "5433:5432"
+  test:
+      container_name: trello-clone-test
+      image: postgres
+      environment:
+          POSTGRES_PASSWORD: test 
+          POSTGRES_USER: postgres
+          POSTGRES_DB: trello-clone-test
+      ports:
+         - "5434:5432"
